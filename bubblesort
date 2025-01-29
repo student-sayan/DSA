@@ -1,0 +1,47 @@
+#include<stdio.h>
+
+void printarr(int *A, int n){
+    for (size_t i = 0; i < n ; i++)
+    {
+        printf("%d ",A[i]);
+    }
+    printf("\n");
+}
+
+void bubblesort(int *A , int n){
+    for (size_t i = 0; i < n-1; i++)
+    {
+        for (size_t j = 0; j < n-1-i; j++)
+        {
+            if (A[j] > A[j+1])
+            {
+                int temp = A[j];
+                A[j] = A[j+1];
+                A[j+1] = temp;
+            }
+            
+        }
+        
+    }
+    
+}
+
+int main(){
+     int n;
+
+    printf("Enter the number of elements in the array: ");
+    scanf("%d", &n);
+
+    int A[n]; 
+    printf("Enter %d elements of the array:\n", n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
+
+
+    
+    
+    bubblesort(A,n);
+    printarr(A,n);
+    return 0;
+}
